@@ -1,0 +1,35 @@
+.how-body{
+    background-color: rgb(60, 60, 60);
+
+    border-radius: 0.25em;
+
+    color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+hr{
+    background-color: white;
+    margin-top: 0;
+}
+
+p{
+    text-align: justify;
+}
+
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    th{
+        background-color: rgb(100, 100, 100);
+    }
+
+    tr, td, th{
+        border: 1px solid white;
+        text-align: center;
+    }
+}

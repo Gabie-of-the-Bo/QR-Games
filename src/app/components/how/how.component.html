@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col p-3 how-body">
+            <h2>The basics</h2>
+            <hr>
+            <p>
+                This web's execution environment is based on HTML's canvas element. The code runner automatically instantiates a canvas and wraps your code
+                inside a lambda expression with the 2D drawing context as its only parameter. This parameter will be called <i>c</i> and you have to know
+                how to work with it, since it is the only thing that you will use to interact with the game.
+            </p>
+            <p>
+                As you may have guessed, this parameter is modified in order to to allow the usage of shorter code. The modifications are the following (access them by using <i>c.whatever</i>):
+            </p>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>h</td>
+                    <td>Attribute</td>
+                    <td>Canvas height</td>
+                </tr>
+                <tr>
+                    <td>w</td>
+                    <td>Attribute</td>
+                    <td>Canvas width</td>
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td>Attribute</td>
+                    <td>Current tick (increases by 1 on every frame)</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td>Attribute</td>
+                    <td>Event container. Click events and so on are stored in here</td>
+                </tr>
+                <tr>
+                    <td>l(x1, y1, x2, y2, w=1, c='#000000')</td>
+                    <td>Function</td>
+                    <td>Draw line of width <i>w</i> and color <i>c</i> from (x1, y1) to (x2, y2)</td>
+                </tr>
+                <tr>
+                    <td>c(x, y, r, w=1, c='#000000')</td>
+                    <td>Function</td>
+                    <td>Draw circle of radius <i>r</i>, width <i>w</i> and color <i>c</i> at position (x, y)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">...</td>
+                </tr>
+            </table>
+            <br>
+
+            <p>
+                Aaaand I can't be bothered to fill out the entire table, I think you get the point. The full list is on <a href="">GitHub</a> 
+                (you can check the runner.component.ts file, ngAfterViewInit function).
+            </p>
+
+            <h2>How to run games</h2>
+            <hr>
+            <p>
+                Games, as they usually do, have a <b>main loop</b>. This is a fancy word for a snippet of code that is executed several times in order to refresh the screen.
+                This snippet is, in your case, the function you wrote in the editor. This function will be run every frame (60 times per second) and will draw or delete what you tell it to.
+            </p>
+
+            <p>You can see some examples in the <b>examples</b> folder in <a href="">GitHub</a>.</p>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

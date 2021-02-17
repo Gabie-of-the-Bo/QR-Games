@@ -1,0 +1,43 @@
+.topbar{
+    height: 8vh;
+
+    background-color: rgb(60, 60, 60);
+
+    .title{
+        padding-left: 1em;
+
+        font-size: 2em;
+        font-weight: bolder;
+        color: white;
+
+        .qr{
+            color: orange;
+        }
+
+        cursor: pointer;
+    }
+
+    .topbutton{
+        display: grid;
+        align-items: center;
+
+        height: 100%;
+
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+
+        color: white;
+        font-weight: bold;
+
+        &:hover{
+            background-color: gray;
+        }
+
+        transition-property: background-color;
+        transition-duration: 0.1s;
+
+        cursor: pointer;
+    }
+
+    user-select: none;
+}

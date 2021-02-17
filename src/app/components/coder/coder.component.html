@@ -1,0 +1,25 @@
+<div id="editor"></div>
+
+<div class="container-fluid controls pt-2 pb-2">
+    <div class="row no-gutters">
+        <div class="col-auto m-1">
+            <button (click)="executeCode()">Execute</button>
+        </div>
+        <div class="col-auto m-1">
+            <button (click)="executeFrame()">Execute frame</button>
+        </div>
+        <div class="col-auto m-1">
+            <button class="danger" (click)="stopCode()">Stop</button>
+        </div>
+    
+        <div *ngIf="url && !error" class="col-5 d-flex align-items-center justify-content-center">
+            <a href="{{url}}">[Link to runner]</a> 
+        </div>
+
+        <div class="col"></div>
+    
+        <div *ngIf="url && !error" class="col-4 d-flex align-items-center justify-content-center">
+            <b class="mr-1">Current size:</b> {{code.length}} bytes ({{minified_code.length}} bytes after compression)
+        </div>
+    </div>
+</div>

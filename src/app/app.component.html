@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row topbar align-items-center mb-5">
+        <div class="col-2 title" (click)="navigateTo('')">
+            <span class="qr">QR</span>Games
+        </div>
+        <div class="col"></div>
+
+        <div class="col-auto topbutton" (click)="navigateTo('')">
+            About
+        </div>
+        <div class="col-auto topbutton" (click)="navigateTo('editor')">
+            Editor
+        </div>
+        <div class="col-auto topbutton" (click)="navigateTo('how')">
+            Execution environment
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
