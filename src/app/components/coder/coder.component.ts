@@ -4,7 +4,6 @@ import { edit } from 'brace';
 
 import 'brace/mode/javascript';
 
-import { toCanvas } from 'qrcode'
 import { minify } from 'terser'
 import { compressToEncodedURIComponent  } from 'lz-string';
 
@@ -49,9 +48,7 @@ export class CoderComponent implements OnInit {
 					this.error = err;
 					this.minified_code = "";
 				})
-	 
-				//toCanvas(document.getElementById('canvas'), url, _ => {})
-			}
+	 		}
 		}, 1000);
 	}
 
