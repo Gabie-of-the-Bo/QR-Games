@@ -1,0 +1,21 @@
+.qr{
+    justify-self: center;
+}
+
+.tab-button{
+    background-color: rgb(60, 60, 60);
+
+    border: 1px solid orange;
+    border-radius: 0.25em;
+
+    font-weight: normal;
+    font-size: 0.9em;
+    color: orange;
+
+    &.active{
+        font-weight: bold;
+        background-color: rgb(60, 60, 60);
+    }
+
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RunnerComponent } from '../runner/runner.component';
 
 @Component({
@@ -9,6 +9,9 @@ import { RunnerComponent } from '../runner/runner.component';
 export class EditorComponent implements OnInit {
 
 	@ViewChild(RunnerComponent) runner: RunnerComponent;
+	@ViewChild("qr") qrCanvas: ElementRef<HTMLCanvasElement>;
+
+	tab: string = "game";
 
 	constructor() { }
 

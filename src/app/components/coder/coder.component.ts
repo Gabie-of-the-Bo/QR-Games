@@ -1,8 +1,10 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import 'brace';
 import { edit } from 'brace';
 
 import 'brace/mode/javascript';
+
+import { toCanvas } from 'qrcode'
 
 import { minify } from 'terser'
 import { compressToEncodedURIComponent  } from 'lz-string';
@@ -13,6 +15,8 @@ import { compressToEncodedURIComponent  } from 'lz-string';
 	styleUrls: ['./coder.component.scss']
 })
 export class CoderComponent implements OnInit {
+
+	@Input() qrCanvas: ElementRef<HTMLCanvasElement>;
 
 	@Output() execute: EventEmitter<string> = new EventEmitter();
 	@Output() executeF: EventEmitter<string> = new EventEmitter();
@@ -43,6 +47,10 @@ export class CoderComponent implements OnInit {
 					this.minified_code = compressToEncodedURIComponent(val.code?? "");
 					this.url = window.location.origin + "/game/" + this.minified_code;
 					this.error = "";
+
+					if(this.qrCanvas && this.qrCanvas.nativeElement){
+						toCanvas(this.qrCanvas.nativeElement, this.url);
+					}
 	
 				}).catch(err => {
 					this.error = err;

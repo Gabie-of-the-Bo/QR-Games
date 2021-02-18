@@ -14,11 +14,24 @@
 	<div class="row p-2">
 		<div class="col-4 d-flex justify-content-center">
 			<div class="t-header">
-				<runner></runner>		
+				<div class="{{tab == 'qr'? 'd-none' : ''}}">
+					<runner></runner>
+				</div>
+				<div class="{{tab == 'qr'? '' : 'd-none'}}">
+					<canvas #qr class="qr" height="500" width="500"></canvas>
+				</div>
+
+				<div class="row pt-2 pb-1">
+					<div class="col"></div>
+					<div class="col tab-button {{tab == 'qr'? '' : 'active'}}" (click)="tab = 'game'">Canvas</div>
+					<div class="col"></div>
+					<div class="col tab-button {{tab == 'qr'? 'active' : ''}}" (click)="tab = 'qr'">QR Code</div>
+					<div class="col"></div>
+				</div>
 			</div>
 		</div>
 		<div class="col-8 justify-content-center">
-			<coder (execute)="executeCode($event)" (executeF)="executeCode($event, false)" (stop)="stopCode()"></coder>
+			<coder [qrCanvas]="qrCanvas" (execute)="executeCode($event)" (executeF)="executeCode($event, false)" (stop)="stopCode()"></coder>
 		</div>
 	</div>
 </div>
