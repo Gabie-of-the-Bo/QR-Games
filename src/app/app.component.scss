@@ -12,6 +12,13 @@
 
         .qr{
             color: orange;
+            transition-property: margin-right;
+            transition-duration: 0.2s;
+            transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1.5);
+        }
+
+        &:hover .qr{
+            margin-right: 0.25em;
         }
 
         cursor: pointer;
