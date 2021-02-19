@@ -1,4 +1,10 @@
 canvas {
     border: 1px solid black;
     background-color: white;
+
+    cursor: default;
+
+    &[contenteditable="true"]:focus{
+        outline: none;
+    }
 }

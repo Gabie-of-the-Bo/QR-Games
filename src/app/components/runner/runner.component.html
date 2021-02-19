@@ -1,1 +1,1 @@
-<canvas #canvas [width]="width" [height]="height" (click)="registerClick($event)"></canvas>
+<canvas #canvas contenteditable="true" [width]="width" [height]="height" (click)="registerClick($event)" (keydown)="pressKey($event)" (keyup)="releaseKey($event)"></canvas>

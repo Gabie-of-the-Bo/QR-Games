@@ -55,10 +55,28 @@ export class RunnerComponent implements OnInit, AfterViewInit {
 			this.context.stroke();
 		};
 
+		// Draw square
+		this.context['q'] = (x, y, w, h, wth=1, c='#000000') => {
+			this.context.lineWidth = wth;
+			this.context.strokeStyle = c;
+			this.context.beginPath();
+			this.context.rect(x, y, w, h);
+			this.context.stroke();
+		};
+
 		// Events
 		this.context['e'] = {
-			c: []
+			c: [],
+			k: [...Array(256)].map(() => 0)
 		};
+	}
+
+	pressKey($event){
+		this.context['e']['k'][$event.keyCode] = 1;
+	}
+
+	releaseKey($event){
+		this.context['e']['k'][$event.keyCode] = 0;
 	}
 
 	registerClick($event){
